@@ -1,2 +1,2 @@
 # mysite
-My blog based on Django
+基于Django的个人web网站
