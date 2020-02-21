@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os
+
 from .base import *
 
 
@@ -18,19 +18,21 @@ from .base import *
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')q6$a=s&)769gzq-*qotajvoz!j8(-0gacu6cg4=a8mg%ucbi%'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# DATABASES_PASSWORD = os.environ['YTL_PASSWORD']
+DATABASES_PASSWORD = '123'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mysite_db',
-        'USER': 'ytl',
-        'PASSWORD': '123',
+        'USER': 'root',
+        'PASSWORD': DATABASES_PASSWORD,
         'HOST': 'localhost',
         'PORT': '3306',
     }

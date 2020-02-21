@@ -1,0 +1,40 @@
+a{
+    color: #eeeeee;
+}
+
+a:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+div.jumbotron{
+    display: none;
+}
+
+div.panel{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+h3.panel-title{
+    padding-top: 0.6em;
+    font-size: 200%;
+    margin-bottom: 0.2em;
+}
+
+div.blog-content{
+    padding:15px;
+}
+
+div.blog-more{
+    padding:15px;
+}
+
+div.blog-more a{
+    color: #006374;
+}
+
+div.blog-more a:hover{
+    color: #004f5d;
+    text-decoration: none;
+}

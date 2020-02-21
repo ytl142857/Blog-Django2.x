@@ -17,20 +17,19 @@ from .base import *
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ['SECRET_KEY']
+SECRET_KEY = '3#u9@rbwq8lg*=if0f7-)g)8wx=ctszd2rw)!pf&ewm9@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-DATABASES_PASSWORD = os.environ['DATABASES.PASSWORD']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mysite_db',
         'USER': 'ytl',
-        'PASSWORD': 'DATABASES_PASSWORD',
+        'PASSWORD': 'ytl142857sql.',
         'HOST': 'localhost',
         'PORT': '3306',
     }

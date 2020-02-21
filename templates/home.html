@@ -2,7 +2,7 @@
 
 
 {% block title %}
-    PUPUPU0525|主页
+    主页
 {% endblock %}
 
 {% block header_extends %}
@@ -12,9 +12,26 @@
 
 {% block nav_home_active %}active{% endblock %}
 
+{% block introduction %}
+    <h3 class="introduction"><b>
+        TL的博客
+    </b></h3>
+{% endblock %}
+
 {% block content %}
-    <h3 class="home-content">PUPUPU0525的博客</h3>
-    <div id="container"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="container"></div>
+                    </div>
+                    <div class="panel-footer">近七日阅读量</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
         // 图表配置
         var options = {
@@ -33,6 +50,7 @@
             series: [{
                 name: '阅读量',
                 data: {{ read_nums }},
+                color:'#522e31',
                 showInLegend: false,
             }],
             plotOptions: {line: {dataLabels: {enabled: true}}},

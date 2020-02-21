@@ -99,4 +99,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CKEDITOR_UPLOAD_PATH = 'upload/'
 
 # custom parameters
-EACH_PAGE_BLOGS_NUMBER = 7
+EACH_PAGE_BLOGS_NUMBER = 10

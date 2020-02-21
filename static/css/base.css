@@ -2,10 +2,48 @@
     margin:0;
     padding:0;
 }
-body{
-    margin-top: 70px!important;
-}
+
 
 ul{
     list-style-type: none;
+}
+
+div.jumbotron{
+    background-color: #008080;
+    margin-top: 50px;
+    padding-top: 0;
+}
+
+div.buttom{
+    margin: 0;
+    background-color: #e7e7e7;
+    position: static;
+}
+
+div.buttom-content{
+    padding-top: 1em;
+    padding-right: 5em;
+}
+
+div.buttom-content h4{
+    padding-bottom: 0.25em;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #dddddd;
+    color:#424242;
+}
+
+div.buttom-content p{
+    color:#777777
+}
+
+div.buttom-text{
+    margin-top: 1.5em;
+    padding: 0.3em 0;
+    text-align: center;
+    background-color: #008080;
+}
+
+span.buttom-text{
+    color: #ffffff;
 }

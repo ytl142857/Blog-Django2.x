@@ -7,7 +7,7 @@
 
 {% load staticfiles %}
 {% block header_extends %}
-    <link rel="stylesheet" href="{% static 'css/blog.css'%}">
+    <link rel="stylesheet" href="{% static 'css/blog_detail.css'%}">
 {% endblock %}
 
 {% block nav_blogs_active %}active{% endblock %}
@@ -17,33 +17,38 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-                <h3>[{{ blog.blog_type }}] {{ blog.title }}</h3>
-                <ul class="blog-info-description">
-                    <li>分类：
-                        <a href="{% url 'blogs_with_type' blog.blog_type.pk %}">
-                            {{ blog.blog_type }}
-                        </a>
-                    </li>
-                    <li>发表日期：{{blog.create_time|date:"Y-m-d H:i:s"}}</li>
-                    <li>阅读量: {{ blog.get_read_num }}</li>
-                </ul>
-                <div class="blog-content">{{ blog.content|safe }}</div>
-                <div class="blog-more">
-                    <p>上一篇：
-                        {% if previous_blog %}
-                            <a href="{% url 'blog_detail' previous_blog.pk %}">{{ previous_blog.title }}</a>
-                        {% else %}
-                            没有更多文章
-                        {% endif %}
-                    </p>
-                    <p>下一篇：
-                        {% if next_blog %}
-                            <a href="{% url 'blog_detail' next_blog.pk %}">{{ next_blog.title }}</a>
-                        {% else %}
-                            没有更多文章
-                        {% endif %}
-                    </p>
-                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>[{{ blog.blog_type }}] {{ blog.title }}</strong></h3>
+                        <p>发表日期：{{blog.create_time|date:"Y-m-d H:i:s"}}</p>
+                        <p>分类标签：
+                            <a href="{% url 'blogs_with_type' blog.blog_type.pk %}">
+                                {{ blog.blog_type }}</a>
+                            &nbsp;&nbsp;阅读({{ blog.get_read_num }})
+                        </p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="blog-content">{{ blog.content|safe }}</div>
+                        <div class="blog-more">
+                            <nav aria-label="...">
+                                <ul class="pager">
+                                    {% if previous_blog %}
+                                        <li class="previous"><a href="{% url 'blog_detail' previous_blog.pk %}"><span aria-hidden="true">&larr;</span>上一篇：{{ previous_blog.title }}</a></li>
+                                    {% else %}
+                                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span>上一篇：没有了</a></li>
+                                    {% endif %}
+                                    
+                                    {% if next_blog %}
+                                        <li class="next"><a href="{% url 'blog_detail' next_blog.pk %}">下一篇：{{ next_blog.title }}<span aria-hidden="true">&rarr;</span></a></li>
+                                    {% else %}
+                                        <li class="next"><a href="#">下一篇：没有了<span aria-hidden="true">&rarr;</span></a></li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        </div>
+                        
+                    </div>
+                </div>   
             </div>
         </div>
     </div>
